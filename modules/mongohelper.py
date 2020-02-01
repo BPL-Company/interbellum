@@ -20,8 +20,3 @@ class MongoHelper:
 
     def find_game(self, chat_id):
         return self.__games.find_one({'id': chat_id})
-
-    def game_info(self, chat_id):
-        game = self.find_game(chat_id)
-        return 'Айди игры: {}\n' \
-               'Админ игры: {}'.format(game['id'], BotUtil.get_link('Админ', game['admin']))
