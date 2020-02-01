@@ -4,13 +4,6 @@ from modules.botutil import BotUtil
 bot = BotUtil(config.token, config.creator)
 
 from pymongo import MongoClient
-
-db = MongoClient(config.db).interbellum
-games = db.games
-countries = db.countries
-
-from modules.mongohelper import MongoHelper
-
 db_helper = MongoHelper(MongoClient(config.db))
 
 
