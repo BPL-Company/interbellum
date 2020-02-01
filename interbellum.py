@@ -22,6 +22,8 @@ def newgame_handler(m):
 
 @bot.message_handler(commands=['game_info'])
 def game_info_handler(m):
+    game = self.find_game(m.chat.id)
+    tts = 'Айди игры: {}\nАдмин игры: {}'.format(game['id'], bot.get_link('Админ', game['admin']))
     bot.send_message(m.chat.id, db_helper.game_info(m.chat.id), parse_mode='HTML')
 
 
