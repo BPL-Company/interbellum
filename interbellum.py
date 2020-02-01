@@ -9,7 +9,7 @@ db_helper = MongoHelper(MongoClient(config.db))
 
 @bot.message_handler(commands=['start'])
 def start_handler(m):
-    if not m.text.count(' ') and m.chat.type == 'private':
+    if m.text.count(' ') == 0 and m.chat.type == 'private':
         bot.send_message(m.from_user.id, 'Бот для игры в Интербеллум. Выступите в роли лидера целой державы.')
         return
 
